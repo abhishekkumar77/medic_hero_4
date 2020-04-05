@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<!-- banner part start-->
+    <section class="banner_part">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 col-xl-5">
+                    <div class="banner_text">
+                        <div class="banner_text_iner">
+                            <h5>We are here for your care</h5>
+                            <h2>Best Care &
+                                Better Doctor</h2>
+                            <p>MEDIC HERO 4 is based web chatbot developed  in 2019  by developers and web designing team from G L Bajaj Institute, Greater Noida  for creating awareness in  healthcare and providing personalized medical consultations.In India , the improving healthcare system needs adequate coverage of healthcare information over its vast scattered population , so this idea of chatbot designing by our team is for answering simple mere health to various disease related medical solutions.</p>
+   
+                            <a href="/chat" class="btn_2">Start Chat</a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="banner_img">
+                        <img src="{% static 'img/banner_img.png'%}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- banner part start-->
+
+    <!-- about us part start-->
+    <section class="about_us padding_top" id="about_here">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-md-6 col-lg-6">
+                    <div class="about_us_img">
+                        <img src="{% static 'img/top_service.png'%}" alt="">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-5">
+                    <div class="about_us_text">
+                        <h2>About us</h2>
+                        <p>The “Medic Hero 4” is a NLP  text based AI web chatbot which helps people by providing symptomatic
+assistance in medical consultancy, quick home remedies ,diet charts , searching nearby hospitals , 
+recommending specialist Doctors according to user’s condition. The service is freely available on
+ web browser or similar services and can be accessed through mobile or personal computers.
+
+Our chat bot can identify symptoms to leading problems and provide genuine one to one personalized medical  consultations and suggestions to users with a reliable accuracy.</p>                       <a class="btn_2 " href="#">learn more</a>
+                        <div class="banner_item">
+                            <div class="single_item">
+                                <img src="img/icon/banner_1.svg" alt="">
+                                <h5>Emergency</h5>
+                            </div>
+                            <div class="single_item">
+                                <img src="img/icon/banner_2.svg" alt="">
+                                <h5>Appointment</h5>
+                            </div>
+                            <div class="single_item">
+                                <img src="img/icon/banner_3.svg" alt="">
+                                <h5>Qualfied</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- about us part end-->
+
+{% endblock %}
