@@ -1,43 +1,28 @@
 {"intents": [
         
-        {"tag": "Measles",
-         "patterns": ["Runny nose Runny eyes cough fever rash"],
-		 "responses":["you are diagonised with Measles"]
+        {"tag": "Common cold",
+         "patterns": ["Runny or stuffy nose Sore throat Cough Congestion Slight body aches or a mild headache Sneezing Low-grade fever"],
+		 "responses":["you might have common cold"]
         },
 		
         {"tag": "Ringworm",
          "patterns": ["Flat ring shaped rash"],
-		 "responses":["you are diagonised with Ringworm"]
+		 "responses":["you might be affected with Ringworm"]
         },
 		
         {"tag": "Rubella",
          "patterns": ["Fever swollen neck glands rash on the face scalp"],
-		 "responses":["you are diagonised with Rubella"]
-        },
-		
-        {"tag": "Norovirus",
-         "patterns": ["Nausea diarrhoea vomiting"],
-		 "responses":["you are diagonised with Norovirus"]
-        },
-		
-        {"tag": "Viral",
-         "patterns": ["Generally unwell headache vomiting"],
-		 "responses":["you are diagonised with Viral"]
+		 "responses":["you might be affected with Rubella"]
         },
 		
         {"tag": "cholera",
          "patterns": ["Abdominal cramps Rapid pulse Unusual sleepiness Lethargy Excessive thirst lack of tears and low urine output Dry skin, dry mucous membrane (such as inside the nose or eyelids), and dry mouth Nausea"],
-		 "responses":["you are diagonised with cholera, treatment for the infection focuses on restoring fluids and salts lost through diarrhea (or vomiting).You can avoid getting the illness by drinking only beverages there were bottled, canned, boiled, or chemically treated, and avoiding tap water, fountain drinks, and ice cubes."]
-        },
-		
-        {"tag": "Pneumonia",
-         "patterns": ["Chills Fever Headache Breathing problems Muscle pain and chest pain Cough, sometimes with yellow, green, or bloody mucus"],
-		 "responses":["you are diagonised with Pneumonia"]
-        },
+		 "responses":["your chance of getting affected with cholera is higher.You can avoid getting the illness by drinking only beverages there were bottled, canned, boiled, or chemically treated, and avoiding tap water, fountain drinks, and ice cubes."]
+        },        
 		
         {"tag": "Brucellosis",
          "patterns": ["Fever Sweats Fatigue Loss of appetite Headache Pain in muscles, joints, or the back"],
-		 "responses":["you might diagonised with Brucellosis. Your doctor will confirm a diagnosis of brucellosis by running tests that look for the bacteria in samples of blood or other bodily fluids. Brucellosis is best prevented by avoiding unpasteurized dairy products."]
+		 "responses":["you might be affected with Brucellosis. Your doctor will confirm a diagnosis of brucellosis by running tests that look for the bacteria in samples of blood or other bodily fluids. Brucellosis is best prevented by avoiding unpasteurized dairy products."]
         },
 		
         {"tag": "Dengue Fever",
@@ -48,36 +33,6 @@
         {"tag": "Gastroenteritis",
          "patterns": ["Watery diarrhea Stomach pain or cramps Nausea Vomiting Muscle aches Headache Fever Chills Excessive sweating"],
 		 "responses":["you might be diagonised with Gastroenteritis. Avoiding Certain Foods and Substances Stay away from caffeine; alcohol; dairy products; and fatty, sugary, or spicy foods until you start to feel better. Eating Bland Foods Plain foods are less likely to irritate your digestive system. Crackers, toast, bananas, gelatin, rice, potatoes, and chicken are some good choices."]
-        },
-		
-        {"tag": "Malaria",
-         "patterns": ["shaking chills that can range from moderate to severe high fever profuse sweating headache nausea vomiting abdominal pain diarrhea"],
-		 "responses":["you might have Malaria. Ways to prevent mosquito bites from Anopheles mosquitoes includ: Avoid outdoor exposure between dusk and dawn. Wear clothing that minimizes exposed skin. Wear insect repellent on your skin that contains DEET"]
-        },
-		
-        {"tag": "",
-         "patterns": [""],
-		 "responses":["you are diagonised with Viral"]
-        },
-		
-        {"tag": "",
-         "patterns": [""],
-		 "responses":["you are diagonised with Viral"]
-        },
-		
-        {"tag": "",
-         "patterns": [""],
-		 "responses":["you are diagonised with Viral"]
-        },
-		
-        {"tag": "",
-         "patterns": [""],
-		 "responses":["you are diagonised with Viral"]
-        },
-		
-        {"tag": "",
-         "patterns": [""],
-		 "responses":["you are diagonised with Viral"]
         }
    ]
 }

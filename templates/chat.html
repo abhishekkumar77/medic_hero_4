@@ -182,7 +182,7 @@ img{ max-width:100%;}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
-
+var context=1;
 $(document).ready(function(){
 
 $("#send").click(function(){
@@ -196,17 +196,20 @@ $("#send").click(function(){
     out += "<\/div>";
     $("#starthere").append(out);    
     //ends  
+   mesg=$("#tosend").val();
    
-  $.post('/predict/',{"msg":$("#tosend").val()},function(data,status){    
-
+  $.post('/predict/',{"msg":mesg,"ctx":context},function(data,status){    
+    var rep = data["m"];
+    var co = data["c"];
+    context = co;
     //incomming msg
-    console.log(data)
+    console.log("context:"+context)
     var str="";		
 		str += "<div class=\"incoming_msg\">";
 		str += "<div class=\"incoming_msg_img\"> <img src=\"{% static 'img/user.png' %}\" alt=\"bot\"> <\/div>";
 		str += "<div class=\"received_msg\">";
 		str += "<div class=\"received_withd_msg\">";
-		str += "<p>"+ data +"<\/p>";
+		str += "<p>"+ rep +"<\/p>";
 		str += "<\/div><\/div><\/div>";		
 		$("#starthere").append(str);
     //ends
@@ -244,10 +247,7 @@ $("#send").click(function(){
                   <p>I am your Bot Doctor.</p>
                 </div>
               </div>
-            </div>
-
-
-            
+            </div>        
 
 
            
