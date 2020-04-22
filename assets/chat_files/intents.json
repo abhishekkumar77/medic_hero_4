@@ -1,12 +1,12 @@
 {"intents": [
         {"tag": "greeting",
          "patterns": ["Hi there", "How are you", "Is anyone there?","Hey","Hola", "Hello", "Hi","hye","good morning","good evening","good afternoon"],
-         "responses": ["Hello", "Good to see you again", "Hi there, how can I help?"],
+         "responses": ["Hello", "Hi", "Hi there, how can I help?"],
          "context": [""]
         },
         {"tag": "goodbye",
          "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Till next time",""],
-         "responses": ["See you!", "Have a nice day", "Bye! Come back again soon."],
+         "responses": ["See you!", "Have a nice day", "Bye! Come back again soon.","Take care","Stay healthy"],
          "context": [""]
         },
         {"tag": "thanks",
@@ -29,38 +29,37 @@
          "responses": ["I can assist in medical consultancy, quick home remedies ,diet charts , searching nearby hospitals"],
          "context": [""]
         },
-        {"tag": "adverse_drug",
-         "patterns": ["How to check Adverse drug reaction?", "Open adverse drugs module", "Give me a list of drugs causing adverse behavior", "List all drugs suitable for patient with adverse reaction", "Which drugs dont have adverse reaction?" ],
-         "responses": ["Navigating to Adverse drug reaction module"],
-         "context": [""]
-        },
-        {"tag": "blood_pressure",
-         "patterns": ["Open blood pressure module", "Task related to blood pressure", "Blood pressure data entry", "I want to log blood pressure results", "Blood pressure data management" ],
-         "responses": ["Navigating to Blood Pressure module"],
-         "context": [""]
-        },
-        {"tag": "blood_pressure_search",
-         "patterns": ["I want to search for blood pressure result history", "Blood pressure for patient", "Load patient blood pressure result", "Show blood pressure results for patient", "Find blood pressure results by ID" ],
-         "responses": ["Please provide Patient ID", "Patient ID?"],
-         "context": ["search_blood_pressure_by_patient_id"]
-        },
-        {"tag": "search_blood_pressure_by_patient_id",
-         "patterns": [],
-         "responses": ["Loading Blood pressure result for Patient"],
-         "context": [""]
-        },
         {"tag": "pharmacy_search",
          "patterns": ["Find me a pharmacy", "Find pharmacy", "List of pharmacies nearby", "Locate pharmacy", "Search pharmacy","Find me a hospital", "Find hospital", "List of hospitals nearby", "Locate hospital", "Search hospital" ],
-         "responses": ["This feature is not enabled yet!"],
+         "responses": ["Sorry, this feature is not enabled yet!"],
          "context": ["search_pharmacy_by_name"]
         },
      
         {"tag": "hospital_search",
          "patterns": ["Lookup for hospital", "Searching for hospital to transfer patient", "I want to search hospital data", "Hospital lookup for patient", "Looking up hospital details" ],
-         "responses": ["This feature is not enabled yet!"],
+         "responses": ["Sorry, this feature is not enabled yet!"],
          "context": ["search_hospital_by_params"]
         },
-        
+		{"tag": "intro",
+         "patterns": ["introduce your self","who are you"],
+         "responses": ["I am your bot doctor. I can guide you through the basic home remedies."],
+         "context": [""]
+        },
+		{"tag": "creater",
+         "patterns": ["who created you","how was you born","your origin"],
+         "responses": ["I was developed Abhishek,Dheeraj,Nishant and Yash under a college project"],
+         "context": [""]
+        },
+		{"tag": "mis",
+         "patterns": ["Are you alive"],
+         "responses": ["Not sure about it"],
+         "context": [""]
+        },
+        {"tag": "mise",
+         "patterns": ["your version","version"],
+         "responses": ["v1"],
+         "context": [""]
+        },
         {"tag": "diagonised",
          "patterns": ["fever spots","Runny nose Runny eyes cough fever rash","Flat ring shaped rash","Fever swollen neck glands rash on the face scalp","Nausea diarrhoea vomiting","Generally unwell headache vomiting","Abdominal cramps Rapid pulse Unusual sleepiness Lethargy Excessive thirst lack of tears and low urine output Dry skin, dry mucous membrane (such as inside the nose or eyelids), and dry mouth Nausea","Chills Fever Headache Breathing problems Muscle pain and chest pain Cough, sometimes with yellow, green, or bloody mucus","Fever Sweats Fatigue Loss of appetite Headache Pain in muscles, joints, or the back","Fever Headache and pain behind the eyes Severe muscle and joint pains Extreme fatigue Rash appearing between the second and fifth day of fever Tendency to bleed from the skin or nose Bloody stools or heavy menstrual bleeding Nausea and vomiting Respiratory symptoms, such as a cough, sore throat, or nasal congestion","Watery diarrhea Stomach pain or cramps Nausea Vomiting Muscle aches Headache Fever Chills Excessive sweating","shaking chills that can range from moderate to severe high fever profuse sweating headache nausea vomiting abdominal pain diarrhea"],
          "responses": ["are you sick!"],

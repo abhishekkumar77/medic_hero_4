@@ -1,27 +1,22 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-from django.views.decorators.csrf import csrf_exempt
-import os
-from medic_hero4.settings import BASE_DIR
-from django.http import JsonResponse
 import nltk
 from nltk.stem import WordNetLemmatizer
-lemmatizer = WordNetLemmatizer()
 import pickle
 import numpy as np
-from keras.models import load_model
 import json
 import random
+from keras.models import load_model
 
-model = load_model("C:\\Users\\abhishek\\MH4\\medic_hero4\\assets\\chat_files\\chatbot_model.h5")
-intents = json.loads(open("C:\\Users\\abhishek\\MH4\\medic_hero4\\assets\\chat_files\\intents.json").read())
-words = pickle.load(open("C:\\Users\\abhishek\\MH4\\medic_hero4\\assets\\chat_files\\words.pkl",'rb'))
-classes = pickle.load(open("C:\\Users\\abhishek\\MH4\\medic_hero4\\assets\\chat_files\\classes.pkl",'rb'))
+lemmatizer = WordNetLemmatizer()
 
-model2 = load_model("C:\\Users\\abhishek\\MH4\\medic_hero4\\assets\\chat_files\\chatbot_medic_model.h5")
-intents2 = json.loads(open("C:\\Users\\abhishek\\MH4\\medic_hero4\\assets\\chat_files\\symp.json").read())
-words2 = pickle.load(open("C:\\Users\\abhishek\\MH4\\medic_hero4\\assets\\chat_files\\words2.pkl",'rb'))
-classes2 = pickle.load(open("C:\\Users\\abhishek\\MH4\\medic_hero4\\assets\\chat_files\\classes2.pkl",'rb'))
+model = load_model('chatbot_model.h5')
+intents = json.loads(open('intents.json').read())
+words = pickle.load(open('words.pkl','rb'))
+classes = pickle.load(open('classes.pkl','rb'))
+
+model2 = load_model('chatbot_medic_model.h5')
+intents2 = json.loads(open('symp.json').read())
+words2 = pickle.load(open('words2.pkl','rb'))
+classes2 = pickle.load(open('classes2.pkl','rb'))
 
 context=1
 dis=""
@@ -199,21 +194,15 @@ def chatbot_response(ctx,msg):
 
 
 
-# Create your views here.
 
-@csrf_exempt
-def reply(request):
-    global context    
-    x = request.POST["msg"]
-    ctx = request.POST["ctx"]
-    ctx = int(ctx)
-    resp = chatbot_response(ctx,x)
-    return HttpResponse(json.dumps({"m":resp,"c":context}),content_type='application/json')
+while(1):
+    con = context
+    msg = str(input("Msg:"))
+    response = chatbot_response(con,msg)
+    c = str(context)
+    print("Context:"+c+"  Bot:"+response)
 
 
-def home(request):
-    return render(request,"index.html")
 
+#---]medichero[---#
 
-def chat(request):    
-    return render(request,"chat.html")

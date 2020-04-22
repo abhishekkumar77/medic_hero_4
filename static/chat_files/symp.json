@@ -2,12 +2,14 @@
         
         {"tag": "Common cold",
          "patterns": ["Runny or stuffy nose Sore throat Cough Congestion Slight body aches or a mild headache Sneezing Low-grade fever"],
-		 "responses":["you might have common cold"]
+		 "responses":["you might have common cold. Are you interested in home remedies for this?"],
+		 "remedy":["Water, juice, clear broth or warm lemon water with honey helps loosen congestion and prevents dehydration. Avoid alcohol, coffee and caffeinated sodas, which can make dehydration worse."]
         },
 		
         {"tag": "Ringworm",
          "patterns": ["Flat ring shaped rash"],
-		 "responses":["you might be affected with Ringworm"]
+		 "responses":["you are affected with Ringworm. Are you interested in home remedies for this?"],
+		 "remedy":["Apple cider vinegar has strong antifungal properties, so it may help treat ringworm when applied topically to the affected area"]
         },
 		
         {"tag": "Rubella",
@@ -16,9 +18,14 @@
         },
 		
         {"tag": "cholera",
-         "patterns": ["Abdominal cramps Rapid pulse Unusual sleepiness Lethargy Excessive thirst lack of tears and low urine output Dry skin, dry mucous membrane (such as inside the nose or eyelids), and dry mouth Nausea"],
+         "patterns": ["Abdominal cramps Rapid pulse Unusual sleepiness Lethargy Excessive thirst lack of tears and low urine output Dry skin, dry mucous membrane such as inside the nose or eyelids and dry mouth Nausea"],
 		 "responses":["your chance of getting affected with cholera is higher.You can avoid getting the illness by drinking only beverages there were bottled, canned, boiled, or chemically treated, and avoiding tap water, fountain drinks, and ice cubes."]
-        },        
+        },
+		
+        {"tag": "Pneumonia",
+         "patterns": ["Chills Fever Headache Breathing problems Muscle pain and chest pain Cough, sometimes with yellow, green, or bloody mucus"],
+		 "responses":["your chance of getting affected with pneumonia is higher"]
+        },
 		
         {"tag": "Brucellosis",
          "patterns": ["Fever Sweats Fatigue Loss of appetite Headache Pain in muscles, joints, or the back"],

@@ -21,7 +21,7 @@ classes2 = pickle.load(open('classes2.pkl','rb'))
 context=1
 dis=""
 user=[]
-
+yes = ["yes","Yes","YES","y","Y"]
 def clean_up_sentence(sentence):
     # tokenize the pattern - split words into array
     sentence_words = nltk.word_tokenize(sentence)
@@ -85,6 +85,24 @@ def predict_class2(sentence, model):
         return_list.append({"intent": classes2[r[0]], "probability": str(r[1])})
     return return_list
 
+def get_remedy(ints,intents_json, symp, msg):
+    global dis
+    global context
+    tag=dis
+    list_of_intents = symp['intents']
+    context=1
+    for i in list_of_intents:
+        if(i['tag']== tag):
+            if(msg in yes):
+                result = " "
+                result = random.choice(i['remedy'])
+            else:
+                result = "Have a nice day."
+            break
+    return result
+    
+    
+
 def get_med_Response_disease(ints,intents_json, symp, msg):
     global dis
     global context
@@ -95,6 +113,7 @@ def get_med_Response_disease(ints,intents_json, symp, msg):
     for i in list_of_intents:
         if(i['tag']== tag):
             result = random.choice(i['responses'])
+            context=5
             break
     return result
     
@@ -167,6 +186,9 @@ def chatbot_response(ctx,msg):
     elif(ctx==4):
         ints = predict_class2(msg,model2)
         res = get_med_Response_disease(ints,intents,intents2, msg)
+    elif(ctx==5):
+        ints = predict_class2(msg,model2)
+        res = get_remedy(ints,intents,intents2, msg)
         
     return res
 
@@ -174,7 +196,7 @@ def chatbot_response(ctx,msg):
 
 
 while(1):
-    con = int(input("Context:"))
+    con = context
     msg = str(input("Msg:"))
     response = chatbot_response(con,msg)
     c = str(context)
