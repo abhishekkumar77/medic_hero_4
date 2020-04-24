@@ -106,12 +106,9 @@ def get_remedy(ints,intents_json, symp, msg):
             break
     return result
     
-    
-
-def get_med_Response_disease(ints,intents_json, symp, msg):
+def get_med_Response_disease(symp, msg):
     global dis
     global context
-    #tag = ints[0]['intent']
     tag=dis
     list_of_intents = symp['intents']
     context=1
@@ -128,15 +125,18 @@ def get_med_Response_temp(msg):
     context=4
     user.append(msg)
     fever=0
-    for mesg in user:
-        for wrd in mesg.split():
-            if(wrd.isdigit()):
-                fever=int(wrd)
+    if(dis=="Common cold"):
+        for mesg in user:
+            for wrd in mesg.split():
+                if(wrd.isdigit()):
+                    fever=int(wrd)
             
-    if(fever!=0):
-        reply="you got "+str(fever)+" fever ?"
+        if(fever!=0):
+            reply="you got "+str(fever)+" fever ?"
+        else:
+            reply = "Is your body temperature above 98 ?"
     else:
-        reply = "Is your body temperature above 98 ?"
+        reply=get_med_Response_disease(intents2, msg)
     return reply
     
    
@@ -164,7 +164,7 @@ def getResponse(ints, intents_json,symp, msg):
                 context=2
                 ints2 = predict_class2(msg, model2)
                 result = get_med_Response(ints2, intents_json,symp, msg)     
-                result = "any more known symptomes?"
+                result = "any more symptomes?"
                 break
             result = random.choice(i['responses'])
             break
@@ -175,28 +175,22 @@ def chatbot_response(ctx,msg):
     global context
     global dis
     context = ctx
-    user.append(msg)
-
-    
+    user.append(msg)    
     if(ctx==1):
         ints = predict_class(msg, model)
         res = getResponse(ints, intents,intents2,msg)
     elif (ctx==2):
         ints = predict_class2(msg,model2)
         res = get_med_Response(ints,intents,intents2, msg) 
-    elif(ctx==3):
-        #ints = predict_class2(msg,model2)
-        #res = get_med_Response_temp(ints,intents,intents2, msg)
+    elif(ctx==3):        
         res = get_med_Response_temp(msg)
     elif(ctx==4):
         ints = predict_class2(msg,model2)
-        res = get_med_Response_disease(ints,intents,intents2, msg)
+        res = get_med_Response_disease(intents2, msg)
     elif(ctx==5):
         ints = predict_class2(msg,model2)
-        res = get_remedy(ints,intents,intents2, msg)
-        
+        res = get_remedy(ints,intents,intents2, msg)        
     return res
-
 
 
 # Create your views here.
