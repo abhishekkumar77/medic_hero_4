@@ -13,15 +13,15 @@ from keras.models import load_model
 import json
 import random
 
-model = load_model("C:\\Users\\abhishek\\MH4\\medic_hero4\\assets\\chat_files\\chatbot_model.h5")
-intents = json.loads(open("C:\\Users\\abhishek\\MH4\\medic_hero4\\assets\\chat_files\\intents.json").read())
-words = pickle.load(open("C:\\Users\\abhishek\\MH4\\medic_hero4\\assets\\chat_files\\words.pkl",'rb'))
-classes = pickle.load(open("C:\\Users\\abhishek\\MH4\\medic_hero4\\assets\\chat_files\\classes.pkl",'rb'))
+model = load_model("assets\\chat_files\\chatbot_model.h5")
+intents = json.loads(open("assets\\chat_files\\intents.json").read())
+words = pickle.load(open("assets\\chat_files\\words.pkl",'rb'))
+classes = pickle.load(open("assets\\chat_files\\classes.pkl",'rb'))
 
-model2 = load_model("C:\\Users\\abhishek\\MH4\\medic_hero4\\assets\\chat_files\\chatbot_medic_model.h5")
-intents2 = json.loads(open("C:\\Users\\abhishek\\MH4\\medic_hero4\\assets\\chat_files\\symp.json").read())
-words2 = pickle.load(open("C:\\Users\\abhishek\\MH4\\medic_hero4\\assets\\chat_files\\words2.pkl",'rb'))
-classes2 = pickle.load(open("C:\\Users\\abhishek\\MH4\\medic_hero4\\assets\\chat_files\\classes2.pkl",'rb'))
+model2 = load_model("assets\\chat_files\\chatbot_medic_model.h5")
+intents2 = json.loads(open("assets\\chat_files\\symp.json").read())
+words2 = pickle.load(open("assets\\chat_files\\words2.pkl",'rb'))
+classes2 = pickle.load(open("assets\\chat_files\\classes2.pkl",'rb'))
 
 context=1
 dis=""
